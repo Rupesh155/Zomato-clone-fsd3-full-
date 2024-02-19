@@ -2,12 +2,10 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/user');
-
  let bcrypt=  require('bcrypt')
-
 router.post('/users',async(req,res)=>{
     const user=req.body
-    // console.log(req.body,"akansha")
+    console.log(req.body,"akansha")
     const  Email=await User.findOne({email:user.email})
     if(Email){
         res.send('user is already register in  our dataBase')
