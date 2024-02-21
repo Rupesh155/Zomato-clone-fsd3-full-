@@ -17,15 +17,14 @@ let mongoose=    require('mongoose')
       })
 
      let Product=    mongoose.model('Product',productSchema)
-
      module.exports=Product
 
+    
 
 
 
 
-
-
+         
 
 
     

@@ -1,6 +1,6 @@
 
 let mongoose=    require('mongoose')
-      let menuSchema=   new  mongoose.Schema({
+      let orderSchema=   new  mongoose.Schema({
         user_id:[{
             type:Schema.Types.ObjectId,
             ref:'User'
@@ -23,6 +23,6 @@ let mongoose=    require('mongoose')
 
       })
 
-     let Menu=    mongoose.model('Menu',menuSchema)
+     let Order=    mongoose.model('Order',orderSchema)
 
-     module.exports=Menu
+     module.exports=Order

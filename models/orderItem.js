@@ -1,7 +1,6 @@
 
 let mongoose=    require('mongoose')
       let orderItemSchema=   new  mongoose.Schema({
-
         menu_id:{
             type:mongoose.Schema.Types.ObjectId,
             ref:'Menu'
@@ -13,5 +12,4 @@ let mongoose=    require('mongoose')
       })
 
      let  OrderItem=    mongoose.model('OrderItem',orderItemSchema)
-
      module.exports=OrderItem

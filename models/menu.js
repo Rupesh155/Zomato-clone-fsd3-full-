@@ -11,9 +11,7 @@ let mongoose=    require('mongoose')
             type:Number
         }
      
-
       })
 
      let Menu=    mongoose.model('Menu',menuSchema)
-
      module.exports=Menu
