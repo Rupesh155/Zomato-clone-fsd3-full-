@@ -6,6 +6,7 @@ const router = express.Router();
 //  create api for restraurant
 
  router.post('/restro', async (req,res)=>{
+    console.log(req.body,"rrrr");
         try{   
               let restraurant=   new Restraurant(req.body)
                await  restraurant.save()
@@ -46,9 +47,6 @@ const router = express.Router();
 
 
  })
-
-
-
  router.get('/restro/:id',  async (req,res)=>{
 
 
@@ -68,6 +66,53 @@ const router = express.Router();
      }
          
  })
+
+
+
+
+//  update restraurant
+
+
+
+router.patch('/restro/:id',   async(req,res)=>{
+    try{
+        let restraurant=      await Restraurant.findByIdAndUpdate(req.params.id, req.body, {new:true})
+         if(restraurant){
+            res.send(restraurant)
+         }
+         else{
+            res.send('not foundddddd not updateddddd')
+         }
+
+    }
+    catch (err){
+        console.log('errr' ,  err);
+    }      
+
+} )
+
+
+
+router.delete('/restro/:id', async(req,res)=>{
+
+    try{
+        let restraurant=   await  Restraurant.findByIdAndDelete(req.params.id, {new:true})
+        if(!restraurant){
+           res.send('not founddd')
+        }
+        else{
+           res.send('deleteddd')
+        }
+
+    }
+    catch{
+        res.send('errrrrr')
+    }
+
+       
+
+})
+
 
 
  module.exports=router
