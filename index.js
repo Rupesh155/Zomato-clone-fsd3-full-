@@ -6,6 +6,8 @@ app.use(express.json())
 let loginRoutes = require('./routes/login')
 app.use(express.urlencoded({ extended: true }));
 let userRoutes = require('./routes/user')
+let restraurantRoutes = require('./routes/restraurant')
+
 mongoose.connect('mongodb://127.0.0.1:27017/zomato').
     then(() => {
         console.log('db');
@@ -17,6 +19,8 @@ mongoose.connect('mongodb://127.0.0.1:27017/zomato').
 
 app.use('/api', userRoutes)
 app.use('/api', loginRoutes)
+app.use('/api', restraurantRoutes)
+
 //    localhost:4000/api/users
 
 app.listen(4000, () => {
