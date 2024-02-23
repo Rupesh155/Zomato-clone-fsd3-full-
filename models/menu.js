@@ -7,10 +7,12 @@ let mongoose=    require('mongoose')
         descriptions:{
             type:String
         },
-        price:{
-            type:Number
+        cat:{
+            type :String,
+            enum:['veg','non-veg'],
+            default:"veg"
         }
-     
+      
       })
 
      let Menu=    mongoose.model('Menu',menuSchema)

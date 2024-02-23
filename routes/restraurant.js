@@ -1,10 +1,7 @@
 const express = require('express');
 const router = express.Router();
  let Restraurant=     require('../models/restraurant')
-
-
 //  create api for restraurant
-
  router.post('/restro', async (req,res)=>{
     console.log(req.body,"rrrr");
         try{   
@@ -42,11 +39,9 @@ const router = express.Router();
 
     }
 
-        
-
-
-
  })
+
+
  router.get('/restro/:id',  async (req,res)=>{
 
 
@@ -67,13 +62,8 @@ const router = express.Router();
          
  })
 
-
-
-
+ 
 //  update restraurant
-
-
-
 router.patch('/restro/:id',   async(req,res)=>{
     try{
         let restraurant=      await Restraurant.findByIdAndUpdate(req.params.id, req.body, {new:true})
@@ -83,7 +73,6 @@ router.patch('/restro/:id',   async(req,res)=>{
          else{
             res.send('not foundddddd not updateddddd')
          }
-
     }
     catch (err){
         console.log('errr' ,  err);
