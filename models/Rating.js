@@ -2,16 +2,13 @@
 let mongoose=    require('mongoose')
       let ratingSchema=   new  mongoose.Schema({
           user_id:[{
-            type:Schema.Types.ObjectId,
+            type: mongoose.Schema.Types.ObjectId,
             ref:'User'
 
           }],
           rating:{
             type:Number
-          }
-
-          
-       
+          } 
 
       })
 
