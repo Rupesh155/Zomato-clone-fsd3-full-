@@ -7,6 +7,8 @@ let loginRoutes = require('./routes/login')
 app.use(express.urlencoded({ extended: true }));
 let userRoutes = require('./routes/user')
 let restraurantRoutes = require('./routes/restraurant')
+let menuRoutes = require('./routes/menu')
+
 let productRoutes = require('./routes/Products')
 
 
@@ -23,6 +25,8 @@ app.use('/api', userRoutes)
 app.use('/api', loginRoutes)
 app.use('/api', restraurantRoutes)
 app.use('/api', productRoutes)
+app.use('/api', menuRoutes)
+
 
 
 //    localhost:4000/api/users
